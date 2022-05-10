@@ -36,43 +36,45 @@ app = dash.Dash()
 
 app.layout = html.Div(children=[
     html.H1(children='BTC Price Checker', 
-style={'textAlign': 'center','color': 'lime'}
+style={'textAlign': 'center','color': 'lime', 'font-family': 'Arial, Helvetica, sans-serif',
+}
 ),
 
     html.Div(children='''
         Python application that converts the cost of Bitcoin to multiple currencies.
     ''',
-style={'textAlign': 'center','color': 'black'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
     html.Div(children='''
         API & Data: CoinDesk: https://www.coindesk.com/price/bitcoin
     ''',
-style={'textAlign': 'center','color': 'black'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-    html.H1(children="Cost of Bitcoin:", style={
+    html.H2(children="Cost of Bitcoin:", style={
+'font-size': '30px',
             'textAlign': 'center',
-            'color': 'lime'
+            'color': 'lime', 'font-family': 'Arial, Helvetica, sans-serif'
         }),
 
 
   
 
 
-    html.H2(children="$" + usdBtcPrice + " USD", style={'textAlign': 'center','color': 'black'}
+    html.H3(children="$" + usdBtcPrice + " USD", style={'font-size': '25px', 'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-    html.H2(children="£" + gbpBtcPrice + " GBP", style={'textAlign': 'center','color': 'black'}
+    html.H3(children="£" + gbpBtcPrice + " GBP", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-    html.H2(children="€" + eurBtcPrice + " EUR", style={'textAlign': 'center','color': 'black'}
+    html.H3(children="€" + eurBtcPrice + " EUR", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
   html.H4(children="Updated: ["+usaTime +" / "+ ukTime +" / "+ isoTime+"]", 
-style={'textAlign': 'center','color': 'black'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
