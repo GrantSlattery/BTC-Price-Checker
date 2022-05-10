@@ -27,6 +27,15 @@ usdBtcPrice = usdData.get("rate")
 gbpBtcPrice = gbpData.get("rate")
 eurBtcPrice = eurData.get("rate")
 
+floatUSDBtcPrice = f"{float(usdBtcPrice.replace(',', '')):.2f}" 
+floatGBPBtcPrice = f"{float(gbpBtcPrice.replace(',', '')):.2f}"
+floatEURBtcPrice = f"{float(eurBtcPrice.replace(',', '')):.2f}"
+
+finalUSDBtcPrice = "{:,}".format(float(floatUSDBtcPrice))
+finalGBPBtcPrice = "{:,}".format(float(floatGBPBtcPrice))
+finalEURBtcPrice = "{:,}".format(float(floatEURBtcPrice))
+
+
 usaTime = timeStamp.get("updated")
 isoTime = timeStamp.get("updatedISO")
 ukTime = timeStamp.get("updateduk")
@@ -62,19 +71,19 @@ style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica,
   
 
 
-    html.H3(children="$" + usdBtcPrice + " USD", style={'font-size': '25px', 'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+    html.H3(children="$" + finalUSDBtcPrice  + " USD", style={'font-size': '25px', 'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-    html.H3(children="£" + gbpBtcPrice + " GBP", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+    html.H3(children="£" + finalGBPBtcPrice  + " GBP", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-    html.H3(children="€" + eurBtcPrice + " EUR", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+    html.H3(children="€" + finalEURBtcPrice  + " EUR", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
   html.H4(children="Updated: ["+usaTime +" / "+ ukTime +" / "+ isoTime+"]", 
-style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+style={'font-size': '12px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
@@ -82,8 +91,14 @@ style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica,
 ])
 
 print("Program running")
+print(usdBtcPrice)
+print("{:,}".format(float(floatUSDBtcPrice)))
+
+print(int(float(usdBtcPrice.replace(',', ''))))
+
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
 
