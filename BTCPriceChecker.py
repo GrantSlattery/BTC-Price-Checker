@@ -35,7 +35,7 @@ ukTime = timeStamp.get("updateduk")
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-    html.H1(children='BTC Currency Converter', 
+    html.H1(children='BTC Price Checker', 
 style={'textAlign': 'center','color': 'lime'}
 ),
 
