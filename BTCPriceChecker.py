@@ -43,7 +43,12 @@ ukTime = timeStamp.get("updateduk")
 # for deployment, pass app.server (which is the actual flask app) to WSGI etc
 app = dash.Dash()
 
-app.layout = html.Div(style={'background-color': 'gold', 'position':'absolute', 'top':'0', 'bottom':'0', 'left':'0', 'right':'0'}, children=[ 
+app.layout = html.Div(style={'background-color': 'gold','position':'absolute', 'top':'0', 'bottom':'0', 'left':'0', 'right':'0', 'display': 'flex',
+  'justify-content': 'center',
+  'align-items': 'center'  }, children=[
+
+	html.Div(style={'border': '4px solid grey'}, children =[
+ 
     html.H1(children='BTC Price Checker', 
 style={'textAlign': 'center','text-transform': 'uppercase',
 'color': 'white', 'font-family': 'Arial, Helvetica, sans-serif',
@@ -51,18 +56,18 @@ style={'textAlign': 'center','text-transform': 'uppercase',
 ),
 
     html.Div(children='''
-        Python application that converts the price of Bitcoin to multiple currencies.
+        Python application that converts the price of Bitcoin to multiple currencies
     ''',
-style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '15px'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '18px'}
 ),
     html.Div(children='''
         API & Data: CoinDesk (https://www.coindesk.com/price/bitcoin)
     ''',
-style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '15px'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '18px'}
 ),
 
 
-    html.H2(children="Cost of Bitcoin:", style={
+    html.H2(children="Price of Bitcoin:", style={
 'font-size': '30px',
             'textAlign': 'center', 
 		  'text-transform': 'uppercase',
@@ -84,11 +89,11 @@ style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica,
 ),
 
   html.H4(children="Updated: ["+usaTime +" / "+ ukTime +" / "+ isoTime+"]", 
-style={'font-size': '12px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+style={'font-size': '15px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
 
-
+])
 ])
 
 print("Program running")
@@ -97,6 +102,4 @@ print("Program running")
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
 
