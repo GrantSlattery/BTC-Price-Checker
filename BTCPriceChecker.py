@@ -36,18 +36,18 @@ finalGBPBtcPrice = "{:,}".format(float(floatGBPBtcPrice))
 finalEURBtcPrice = "{:,}".format(float(floatEURBtcPrice))
 
 
-usaTime = timeStamp.get("updated")
+utcTime = timeStamp.get("updated")
 isoTime = timeStamp.get("updatedISO")
 ukTime = timeStamp.get("updateduk")
 
 # for deployment, pass app.server (which is the actual flask app) to WSGI etc
 app = dash.Dash()
 
-app.layout = html.Div(style={'background-color': 'gold','position':'absolute', 'top':'0', 'bottom':'0', 'left':'0', 'right':'0', 'display': 'flex',
+app.layout = html.Div(style={'background-color': 'black','position':'absolute', 'top':'0', 'bottom':'0', 'left':'0', 'right':'0', 'display': 'flex',
   'justify-content': 'center',
   'align-items': 'center'  }, children=[
 
-	html.Div(style={'border': '4px solid grey'}, children =[
+	html.Div(style={'border': '6px solid DimGrey', 'background-color':'gold', 'padding': '2%'}, children =[
  
     html.H1(children='BTC Price Checker', 
 style={'textAlign': 'center','text-transform': 'uppercase',
@@ -88,7 +88,7 @@ style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica,
     html.H3(children="€" + finalEURBtcPrice  + " EUR", style={'font-size': '25px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
-  html.H4(children="Updated: ["+usaTime +" / "+ ukTime +" / "+ isoTime+"]", 
+  html.H4(children="Updated: "+utcTime+"", 
 style={'font-size': '15px','textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
 
