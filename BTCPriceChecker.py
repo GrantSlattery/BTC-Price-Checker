@@ -43,33 +43,34 @@ ukTime = timeStamp.get("updateduk")
 # for deployment, pass app.server (which is the actual flask app) to WSGI etc
 app = dash.Dash()
 
-app.layout = html.Div(children=[
+app.layout = html.Div(style={'background-color': 'gold', 'position':'absolute', 'top':'0', 'bottom':'0', 'left':'0', 'right':'0'}, children=[ 
     html.H1(children='BTC Price Checker', 
-style={'textAlign': 'center','color': 'lime', 'font-family': 'Arial, Helvetica, sans-serif',
+style={'textAlign': 'center','text-transform': 'uppercase',
+'color': 'white', 'font-family': 'Arial, Helvetica, sans-serif',
 }
 ),
 
     html.Div(children='''
-        Python application that converts the cost of Bitcoin to multiple currencies.
+        Python application that converts the price of Bitcoin to multiple currencies.
     ''',
-style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '15px'}
 ),
     html.Div(children='''
-        API & Data: CoinDesk: https://www.coindesk.com/price/bitcoin
+        API & Data: CoinDesk (https://www.coindesk.com/price/bitcoin)
     ''',
-style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
+style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '15px'}
 ),
 
 
     html.H2(children="Cost of Bitcoin:", style={
 'font-size': '30px',
-            'textAlign': 'center',
-            'color': 'lime', 'font-family': 'Arial, Helvetica, sans-serif'
+            'textAlign': 'center', 
+		  'text-transform': 'uppercase',
+            'color': 'white', 'font-family': 'Arial, Helvetica, sans-serif'
         }),
 
 
   
-
 
     html.H3(children="$" + finalUSDBtcPrice  + " USD", style={'font-size': '25px', 'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif'}
 ),
@@ -91,14 +92,11 @@ style={'font-size': '12px','textAlign': 'center','color': 'black', 'font-family'
 ])
 
 print("Program running")
-print(usdBtcPrice)
-print("{:,}".format(float(floatUSDBtcPrice)))
-
-print(int(float(usdBtcPrice.replace(',', ''))))
 
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
 
 
