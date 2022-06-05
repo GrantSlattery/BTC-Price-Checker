@@ -56,7 +56,7 @@ style={'textAlign': 'center','text-transform': 'uppercase',
 ),
 
     html.Div(children='''
-        Python application that converts the price of Bitcoin to multiple currencies
+        Python script that converts the price of Bitcoin to multiple currencies
     ''',
 style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': '18px'}
 ),
@@ -67,7 +67,7 @@ style={'textAlign': 'center','color': 'black', 'font-family': 'Arial, Helvetica,
 ),
 
 
-    html.H2(children="Price of Bitcoin:", style={
+    html.H2(children="Bitcoin Price:", style={
 'font-size': '30px',
             'textAlign': 'center', 
 		  'text-transform': 'uppercase',
